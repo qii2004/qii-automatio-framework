@@ -1,185 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<groupId>oneshield</groupId>
-	<artifactId>OneshieldBDDQAT</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
-	<name>Oneshield BDD QAT Hiscox </name>
+    <modelVersion>4.0.0</modelVersion>
 
-	<properties>
-		<cucumber.version>2.3.1</cucumber.version>
-		<picocontainer.version>2.15</picocontainer.version>
-		<selenium.version>3.9.1</selenium.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <surefire.version>2.19.1</surefire.version>
-        <failsafe.version>2.19.1</failsafe.version>
-        <compiler.version>3.5.1</compiler.version>
-        <enforcer.version>1.4.1</enforcer.version>
-        <junit.version>4.12</junit.version>
-        <assertj.version>3.5.1</assertj.version>
-        <slf4j.version>1.7.21</slf4j.version>
-        <serenity.version>1.8.20</serenity.version>
-        <serenity.maven.version>1.8.20</serenity.maven.version>
-        <serenity.cucumber.version>1.6.10</serenity.cucumber.version>
-	</properties>
+    <groupId>hiscoxusa</groupId>
+    <artifactId>oneshield-test-suite</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>oneshield-test-suite</name>
 
-	<dependencies>
-		
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<dependency>
-		    <groupId>io.cucumber</groupId>
-		    <artifactId>cucumber-java</artifactId>
-		    <version>${cucumber.version}</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-		<dependency>
-		    <groupId>io.cucumber</groupId>
-		    <artifactId>cucumber-junit</artifactId>
-		    <version>${cucumber.version}</version>
-		    <scope>test</scope>
-		</dependency>
-		
-
-		
-		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
-		<dependency>
-		    <groupId>org.jsoup</groupId>
-		    <artifactId>jsoup</artifactId>
-		    <version>1.10.3</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-		<dependency>
-		    <groupId>com.google.code.gson</groupId>
-		    <artifactId>gson</artifactId>
-		    <version>2.8.2</version>
-		</dependency>
-		
-				
-		
-
-		<!-- https://mvnrepository.com/artifact/info.cukes/gherkin 
-		<dependency>
-		    <groupId>info.cukes</groupId>
-		    <artifactId>gherkin</artifactId>
-		    <version>2.12.2</version>
-		    <scope>provided</scope>
-		</dependency>
-		-->
-
-		
-		
+    <organization>
+        <name>HiscoxUSA</name>
+        <url>www.hiscox.com</url>
+    </organization>
 
 
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>3.17</version>
-		</dependency>
-		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-			<version>2.0.2</version>
-		</dependency>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<dependency>
-			<groupId>xerces</groupId>
-			<artifactId>xercesImpl</artifactId>
-			<version>2.11.0</version>
-		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/xalan/xalan -->
-		<dependency>
-		    <groupId>xalan</groupId>
-		    <artifactId>xalan</artifactId>
-		    <version>2.7.2</version>
-		</dependency>
-		
-		
+        <serenity.version>2.0.30</serenity.version>
+        <serenity.maven.version>2.0.30</serenity.maven.version>
+        <serenity.cucumber.version>1.9.22</serenity.cucumber.version>
 
-		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-	<dependency>
-	    <groupId>com.google.guava</groupId>
-	    <artifactId>guava</artifactId>
-	    <version>23.6-jre</version>
-	</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
-	<dependency>
-	    <groupId>com.google.code.findbugs</groupId>
-	    <artifactId>jsr305</artifactId>
-	    <version>3.0.1</version>
-	</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-	<dependency>
-	    <groupId>org.testng</groupId>
-	    <artifactId>testng</artifactId>
-	    <version>6.13.1</version>
-	    <scope>test</scope>
-	</dependency>
-	<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-testng</artifactId>
-			<version>1.2.5</version>
-	</dependency>	
-		
-			
-		<!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport -->
-		<dependency>
-		    <groupId>com.vimalselvam</groupId>
-		    <artifactId>cucumber-extentsreport</artifactId>
-		    <version>1.1.0</version>
-		</dependency>
-				
-		<dependency>
-		  	<groupId>com.relevantcodes</groupId>
-		  	<artifactId>extentreports</artifactId>
-		  	<version>2.41.0</version>
-		</dependency>
-		
-		
-		
-		 
-		 <!--  installed in m2_local_repo since the url is not available on mvnrepo: https://stackoverflow.com/questions/2229757/maven-add-a-dependency-to-a-jar-by-relative-path-->
-		 <dependency>
-		    <groupId>org.seleniumhq.selenium</groupId>
-		    <artifactId>selenium-server-standalone</artifactId>
-		    <version>${selenium.version}</version>
-		</dependency>
-		
-		<!-- Serenity BDD -->
+        <cucumber.version>1.2.5</cucumber.version>
+        <jaxb.version>2.3.1</jaxb.version>
+        <selenium.version>3.12.0</selenium.version>
+
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+
+        <tags>@web</tags>
+        <parallel.tests>1</parallel.tests>
+        <webdriver.base.url>https://osqa-oneshield-web-northeurope.azure.hiscox.com/oneshield/index.jsp#gateway</webdriver.base.url>
+        <webdriver.chrome.driver>${user.home}/.m2/repository/webdriver/chromedriver/win32/2.40/chromedriver.exe</webdriver.chrome.driver>
+        <webdriver.firefox.driver>${user.home}/.m2/repository/webdriver/geckodriver/win64/0.22.0/geckodriver</webdriver.firefox.driver>
+        <webdriver.ie.driver>${user.home}/.m2/repository/webdriver/IEDriverServer/x64/3.141/IEDriverServer.exe</webdriver.ie.driver>
+
+    </properties>
+    <distributionManagement>
+        <repository>
+            <id>local-repo</id>
+            <name>Hiscox-artifactory-releases</name>
+            <url>http://artifactory.hiscox.com:8080/artifactory/ustestng-libs-release</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>usa.hiscox</groupId>
+            <artifactId>automation-framework</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
@@ -193,93 +64,265 @@
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-screenplay-webdriver</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber</artifactId>
             <version>${serenity.cucumber.version}</version>
         </dependency>
-        <!-- Serenity BDD -->
-		 
-	<!--  MONGODB -->	 
-	<dependency>
-	    <groupId>org.mongodb</groupId>
-	    <artifactId>mongo-java-driver</artifactId>
-	    <version>3.4.1</version>
-	</dependency>
-	
-	<!-- VELOCITY -->
-	<dependency>
-	    <groupId>org.apache.velocity</groupId>
-	    <artifactId>velocity</artifactId>
-	    <version>1.7</version>
-    </dependency>
-	<dependency>
-	     <groupId>org.apache.velocity</groupId>
-	     <artifactId>velocity-tools</artifactId>
-	     <version>2.0</version>
-	</dependency>
-				
-	</dependencies>
-	
-	<!--  local repository for the selenium-server-standalone above -->
-	<repositories>
-	   <repository>
-	       <id>m2_local_repoo</id>
-	       <url>file://${project.basedir}/m2_local_repo</url>
-	   </repository>
-	  <repository>
-            <id>serenity</id>
-            <name>bintray</name>
-            <url>http://dl.bintray.com/serenity/maven</url>
-        </repository>
-	</repositories>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.stqa.selenium</groupId>
+            <artifactId>webdriver-factory</artifactId>
+            <version>1.1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+        <!-- XML parsing dependency -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-configuration2</artifactId>
+            <version>2.0</version>
+        </dependency>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>serenity</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/serenity/maven</url>
-        </pluginRepository>
-    </pluginRepositories>
-    
-	    <build>
+        <dependency>
+            <groupId>mx4j</groupId>
+            <artifactId>mx4j-tools</artifactId>
+            <version>3.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>6.1.0.jre8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.4</version>
+        </dependency>
+        <!--Velocity-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>1.18.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.1.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vimalselvam</groupId>
+            <artifactId>cucumber-extentsreport</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml</groupId>
+            <artifactId>jackson-xml-databind</artifactId>
+            <version>0.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.4.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-nop</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.applitools</groupId>
+            <artifactId>eyes-sdk-java</artifactId>
+            <version>2.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.applitools</groupId>
+            <artifactId>eyes-selenium-java</artifactId>
+            <version>2.28</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+    </dependencies>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${enforcer.version}</version>
-                <executions>
-                    <execution>
-                        <id>enforce</id>
-                        <configuration>
-                            <rules>
-                               <!-- <requireUpperBoundDeps /> --> 
-                                <requireJavaVersion>
-                                    <version>${java.version}</version>
-                                </requireJavaVersion>
-                                                               
-                            </rules>
-                        </configuration>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire.version}</version>
+                <version>2.20</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${failsafe.version}</version>
+                <version>2.22.1</version>
                 <configuration>
                     <includes>
-                        <include>**/RunCucumberTest.java</include>
+                        <include>**/*Test.java</include>
+                        <include>**/Test*.java</include>
+                        <include>**/*TestSuite.java</include>
+                        <include>**/When*.java</include>
                     </includes>
+                    <systemPropertyVariables>
+                        <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
+                    </systemPropertyVariables>
+                    <parallel>classes</parallel>
+                    <threadCount>${parallel.tests}</threadCount>
+                    <!--<forkCount>${parallel.tests}</forkCount>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -293,28 +336,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${compiler.version}</version>
+                <version>3.5.1</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <!-- 
-                    <fork>true</fork>
-            		<meminitial>1024m</meminitial>
-            		<maxmem>2024m</maxmem>
-            		 -->
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>${serenity.maven.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>${serenity.version}</version>
-                    </dependency>
-                </dependencies>
+                <configuration>
+                    <tags>${tags}</tags>
+                </configuration>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
